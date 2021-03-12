@@ -3,7 +3,7 @@
 %   z=ckron(b)     Solves (B1xB2x...xBd)
 %   z=ckron(b,1)   Solves (inv(B1)xinv(B2)x...xinv(Bd))
 % where x denotes Kronecker (tensor) product.
-% The Bi are passed as a cell array B. 
+% The Bi are passed as a cell array B.
 
 % Copyright (c) 1997-2000, Paul L. Fackler & Mario J. Miranda
 % paul_fackler@ncsu.edu, miranda.4@osu.edu
@@ -26,9 +26,9 @@ else
   end
   for i=2:d
     if invert
-      z=kronmex(z,inv(b{i}));
+      z=kron(z,inv(b{i}));
     else
-      z=kronmex(z,b{i});
+      z=kron(z,b{i});
     end
   end
 end
